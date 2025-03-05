@@ -22,14 +22,6 @@ public class OrderServiceImpl implements OrderService {
 	@Override
 	public List<Order> getOrders() {
 		
-//		System.out.println("************************************************************");
-//		System.out.println("get orders called");
-//		System.out.println(orderRepository.findAll());
-//		
-//		for(Order order:orderRepository.findAll()) {
-//			System.out.println(order.toString());
-//		}
-		
 		return orderRepository.findAll();
 	}
 

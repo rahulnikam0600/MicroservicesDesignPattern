@@ -10,10 +10,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
-@Data
 @Entity
-@ToString
-@NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "orders")
 public class Order {
@@ -25,6 +22,41 @@ public class Order {
 	private String category;
 	private String colour;
 	private Double price;
+	
+	public Integer getId() {
+		return id;
+	}
+	public void setId(Integer id) {
+		this.id = id;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getCategory() {
+		return category;
+	}
+	public void setCategory(String category) {
+		this.category = category;
+	}
+	public String getColour() {
+		return colour;
+	}
+	public void setColour(String colour) {
+		this.colour = colour;
+	}
+	public Double getPrice() {
+		return price;
+	}
+	public void setPrice(Double price) {
+		this.price = price;
+	}
+	public Order() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 	public Order( String name, String category, String colour, Double price) {
 		super();
 		//this.id = id;
@@ -32,10 +64,6 @@ public class Order {
 		this.category = category;
 		this.colour = colour;
 		this.price = price;
-	}
-	public Order() {
-		super();
-		// TODO Auto-generated constructor stub
 	}
 	@Override
 	public String toString() {

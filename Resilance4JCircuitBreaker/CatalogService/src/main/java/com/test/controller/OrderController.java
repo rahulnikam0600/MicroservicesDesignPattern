@@ -17,17 +17,8 @@ public class OrderController {
 	private OrderService orderService;
 	
 	@GetMapping
-	public List<Order> getOrders(){
-		
-		System.err.println("************************************************************");
-		
+	public List<Order> getOrders(){		
 		List<Order> orders = orderService.getOrders();
-		
-		for(Order order:orders) {
-			System.out.println(order.toString());
-		}
-
-		
 		return orders; 
 	}
 	
