@@ -18,7 +18,17 @@ public class OrderController {
 	
 	@GetMapping
 	public List<Order> getOrders(){
-		return orderService.getOrders(); 
+		
+		System.err.println("************************************************************");
+		
+		List<Order> orders = orderService.getOrders();
+		
+		for(Order order:orders) {
+			System.out.println(order.toString());
+		}
+
+		
+		return orders; 
 	}
 	
 	@GetMapping("/{category}")
