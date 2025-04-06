@@ -41,7 +41,11 @@ public class OrderController {
     @CircuitBreaker(name =USER_SERVICE,fallbackMethod = "getAllAvailableProducts")
     //@Retry(name = USER_SERVICE,fallbackMethod = "getAllAvailableProducts")
     public List<OrderDTO> displayOrders(@RequestParam("category") String category) {
+<<<<<<< HEAD
         String url = category.isBlank() ? BASEURL+"/all" : BASEURL + "/" + category;
+=======
+        String url = category.isBlank() ? BASEURL : BASEURL + "/" + category;
+>>>>>>> 0ab247589ac7d94a5eff1127265c484977d60be7
         System.err.println("retry method called "+attempt++ +" times "+" at "+new Date());
 //        System.out.println(url);
         return restTemplate.getForObject(url, ArrayList.class);
