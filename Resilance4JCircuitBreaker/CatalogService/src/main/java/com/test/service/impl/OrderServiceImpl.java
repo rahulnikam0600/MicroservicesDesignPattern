@@ -1,5 +1,6 @@
 package com.test.service.impl;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -21,7 +22,6 @@ public class OrderServiceImpl implements OrderService {
 
 	@Override
 	public List<Order> getOrders() {
-		
 		return orderRepository.findAll();
 	}
 
@@ -32,17 +32,16 @@ public class OrderServiceImpl implements OrderService {
 	}
 
 	
-  @PostConstruct
-  public void initOrdersTable() {
-      orderRepository.saveAll(Stream.of(
-                      new Order("mobile", "electronics", "white", 20000d),
-                      new Order("T-Shirt", "clothes", "black", 999d),
-                      new Order("Jeans", "clothes", "blue", 1999d),
-                      new Order("Laptop", "electronics", "gray", 50000d),
-                      new Order("digital watch", "electronics", "black", 2500d),
-                      new Order("Fan", "electronics", "black", 50000d)
-              ).
-              collect(Collectors.toList()));
-  }
+	@PostConstruct
+	public void initOrdersTable() {
+		orderRepository.saveAll(Arrays.asList(
+				new Order("mobile", "electronics", "white", 20000d),
+				new Order("T-Shirt", "clothes", "black", 999d),
+				new Order("Jeans", "clothes", "blue", 1999d),
+				new Order("Laptop", "electronics", "gray", 50000d),
+				new Order("digital watch", "electronics", "black", 2500d),
+				new Order("Fan", "electronics", "black", 50000d)
+				));
+	}
 
 }
